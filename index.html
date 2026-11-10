@@ -7,7 +7,6 @@
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-
     <header>
         <h1>Погодний дашборд</h1>
         <nav>
@@ -20,71 +19,62 @@
             <button type="submit">Знайти</button>
         </form>
     </header>
-
     <main>
-        <section id="current">
-            <h2>Поточна погода</h2>
-            <img src="assets/img/sunny.svg" alt="Сонячно, без опадів">
-            <p>+21&deg;С, ясно</p>
-        </section>
-
+        <div class="top">
+            <section id="current">
+                <h2>Поточна погода</h2>
+                <img src="assets/img/sunny.svg" alt="Сонячно, без опадів">
+                <p>+21&deg;C, ясно</p>
+            </section>
+            <aside>
+                <h2>Що вдягнути</h2>
+                <p>Вдень тепло — вистачить легкої куртки або светра. У середу та суботу візьміть парасольку.</p>
+            </aside>
+        </div>
         <section id="forecast">
             <h2>Прогноз</h2>
-
-            <article class="card">
-                <h3>Вівторок</h3>
-                <p class="temp">+18&deg;C</p>
-                <p class="desc">хмарно</p>
-            </article>
-
-            <article class="card">
-                <h3>Середа</h3>
-                <p class="temp">+16&deg;C</p>
-                <p class="desc">дощ</p>
-            </article>
-
-            <article class="card">
-                <h3>Четвер</h3>
-                <p class="temp">+17&deg;C</p>
-                <p class="desc">мінлива хмарність</p>
-            </article>
-
-            <article class="card">
-                <h3>П’ятниця</h3>
-                <p class="temp">+19&deg;C</p>
-                <p class="desc">сонячно</p>
-            </article>
-
-            <article class="card">
-                <h3>Субота</h3>
-                <p class="temp">+15&deg;C</p>
-                <p class="desc">дощ</p>
-            </article>
-
-            <article class="card">
-                <h3>Неділя</h3>
-                <p class="temp">+20&deg;C</p>
-                <p class="desc">ясно</p>
-            </article>
-
-            <article class="card">
-                <h3>Понеділок</h3>
-                <p class="temp">+17&deg;C</p>
-                <p class="desc">хмарно</p>
-            </article>
+            <div class="cards">
+                <article class="card">
+                    <h3>Вівторок</h3>
+                    <p class="temp">+18&deg;C</p>
+                    <p class="desc">хмарно</p>
+                </article>
+                <article class="card">
+                    <h3>Середа</h3>
+                    <p class="temp">+16&deg;C</p>
+                    <p class="desc">дощ</p>
+                </article>
+                <article class="card">
+                    <h3>Четвер</h3>
+                    <p class="temp">+17&deg;C</p>
+                    <p class="desc">мінлива хмарність</p>
+                </article>
+                <article class="card">
+                    <h3>П’ятниця</h3>
+                    <p class="temp">+19&deg;C</p>
+                    <p class="desc">сонячно</p>
+                </article>
+                <article class="card">
+                    <h3>Субота</h3>
+                    <p class="temp">+15&deg;C</p>
+                    <p class="desc">дощ</p>
+                </article>
+                <article class="card">
+                    <h3>Неділя</h3>
+                    <p class="temp">+20&deg;C</p>
+                    <p class="desc">ясно</p>
+                </article>
+                <article class="card">
+                    <h3>Понеділок</h3>
+                    <p class="temp">+17&deg;C</p>
+                    <p class="desc">хмарно</p>
+                </article>
+            </div>
         </section>
     </main>
-
-    <aside>
-        <h2>Що вдягнути</h2>
-        <p>Вдень тепло вистачить легкої куртки або светра.
-        У середу та суботу візьміть парасольку.</p>
-    </aside>
-
     <footer>
         <p>Дані надані навчальним прикладом. &copy; 2026 Пічугін Олексій</p>
     </footer>
-
     <script src="js/app.js"></script>
 </body>
 </html>
