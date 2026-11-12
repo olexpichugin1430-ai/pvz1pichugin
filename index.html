@@ -4,6 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Погодний дашборд</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700&family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
@@ -23,8 +26,10 @@
         <div class="top">
             <section id="current">
                 <h2>Поточна погода</h2>
-                <img src="assets/img/sunny.svg" alt="Сонячно, без опадів">
-                <p>+21&deg;C, ясно</p>
+                <!-- Використовуємо локальну картинку -->
+                <img src="assets/img/sunny.svg" alt="Сонячно, без опадів" width="96" height="96">
+                <p class="temp temp--warm">+21&deg;C</p>
+                <p class="desc">ясно</p>
             </section>
             <aside>
                 <h2>Що вдягнути</h2>
@@ -36,37 +41,37 @@
             <div class="cards">
                 <article class="card">
                     <h3>Вівторок</h3>
-                    <p class="temp">+18&deg;C</p>
+                    <p class="temp temp--warm">+18&deg;C</p>
                     <p class="desc">хмарно</p>
                 </article>
                 <article class="card">
                     <h3>Середа</h3>
-                    <p class="temp">+16&deg;C</p>
+                    <p class="temp temp--warm">+16&deg;C</p>
                     <p class="desc">дощ</p>
                 </article>
                 <article class="card">
                     <h3>Четвер</h3>
-                    <p class="temp">+17&deg;C</p>
+                    <p class="temp temp--warm">+17&deg;C</p>
                     <p class="desc">мінлива хмарність</p>
                 </article>
                 <article class="card">
                     <h3>П’ятниця</h3>
-                    <p class="temp">+19&deg;C</p>
+                    <p class="temp temp--warm">+19&deg;C</p>
                     <p class="desc">сонячно</p>
                 </article>
                 <article class="card">
                     <h3>Субота</h3>
-                    <p class="temp">+15&deg;C</p>
+                    <p class="temp temp--cool">+15&deg;C</p>
                     <p class="desc">дощ</p>
                 </article>
                 <article class="card">
                     <h3>Неділя</h3>
-                    <p class="temp">+20&deg;C</p>
+                    <p class="temp temp--warm">+20&deg;C</p>
                     <p class="desc">ясно</p>
                 </article>
                 <article class="card">
                     <h3>Понеділок</h3>
-                    <p class="temp">+17&deg;C</p>
+                    <p class="temp temp--warm">+17&deg;C</p>
                     <p class="desc">хмарно</p>
                 </article>
             </div>

@@ -3,25 +3,49 @@
 }
 
 :root {
-    --sky-deep: #0b3d91;
-    --sky-mid: #2a6fd6;
-    --sky-light: #9fcbf5;
-    --sky-pale: #dcecfb;
-    --sky-lighter: #f4faff;
-    --text: #12263f;
+    --blue-900: #123c69;
+    --blue-700: #1e4f82;
+    --blue-600: #2e5a8c;
+
+    --bg: #eaf1f8;
+    --surface: #ffffff;
+    --text: #14263d;
+    --text-muted: #4a5d78;
+    --border: #c9d9ea;
     --white: #ffffff;
+
+    --accent: #ffb74d;
+    --accent-hover: #ffa726;
+    --accent-soft: #fff4e0;
+
+    --cold: #1565c0;
+    --cool: #00796b;
+    --warm: #b45309;
+    --hot: #c62828;
+
+    --fs-sm: 0.875rem;
+    --fs-base: 1rem;
+    --fs-h3: 1.125rem;
+    --fs-h2: 1.5rem;
+    --fs-h1: 1.75rem;
+    --fs-temp: 2rem;
+    --fs-temp-lg: 2.5rem;
+
+    --font-heading: "Montserrat", system-ui, sans-serif;
+    --font-text: "Open Sans", system-ui, sans-serif;
 }
 
 body {
     margin: 0;
-    font-family: system-ui, sans-serif;
-    font-size: 1rem;
+    font-family: var(--font-text);
+    font-size: var(--fs-base);
     line-height: 1.5;
     color: var(--text);
-    background-color: var(--sky-pale);
+    background-color: var(--bg);
 }
 
 h1, h2, h3 {
+    font-family: var(--font-heading);
     line-height: 1.2;
 }
 
@@ -35,16 +59,16 @@ header {
     flex-direction: column;
     align-items: center;
     gap: 12px;
-    background: linear-gradient(135deg, var(--sky-deep), var(--sky-mid));
+    background: linear-gradient(135deg, var(--blue-900), var(--blue-600));
     padding: 24px 16px;
-    border-bottom: 2px solid var(--sky-light);
+    border-bottom: 3px solid var(--accent);
     color: var(--white);
     text-align: center;
 }
 
 header h1 {
     margin: 0;
-    font-size: 2rem;
+    font-size: var(--fs-h1);
     color: var(--white);
 }
 
@@ -73,23 +97,31 @@ header form {
 
 header input {
     padding: 8px 12px;
-    border: 1px solid var(--sky-light);
+    border: 1px solid transparent;
     border-radius: 6px;
-    font-size: 1rem;
+    font-family: var(--font-text);
+    font-size: var(--fs-base);
+    color: var(--text);
 }
 
 header input:focus {
-    outline: 2px solid var(--white);
+    outline: 3px solid var(--accent);
 }
 
 header button {
     padding: 8px 16px;
     border: 0;
     border-radius: 6px;
-    background-color: var(--white);
-    color: var(--sky-deep);
-    font-weight: 600;
+    background-color: var(--accent);
+    color: var(--blue-900);
+    font-family: var(--font-text);
+    font-size: var(--fs-base);
+    font-weight: 700;
     cursor: pointer;
+}
+
+header button:hover {
+    background-color: var(--accent-hover);
 }
 
 main {
@@ -99,20 +131,20 @@ main {
 }
 
 section {
-    margin-bottom: 40px;
+    margin-bottom: 48px;
 }
 
 h2 {
     margin: 0 0 16px;
-    color: var(--sky-deep);
-    font-size: 1.5rem;
+    color: var(--blue-900);
+    font-size: var(--fs-h2);
 }
 
 .top {
     display: flex;
     flex-direction: column;
     gap: 24px;
-    margin-bottom: 40px;
+    margin-bottom: 48px;
 }
 
 .top section {
@@ -120,36 +152,104 @@ h2 {
 }
 
 #current {
+    --cold: #a5d6f7;
+    --cool: #9be0d8;
+    --warm: #ffcc80;
+    --hot: #ffb3a7;
+    padding: 24px;
+    border-radius: 16px;
+    background-color: var(--blue-700);
+    box-shadow: 0 4px 12px rgba(18, 60, 105, 0.25);
+    color: var(--white);
     text-align: center;
+}
+
+#current h2 {
+    color: var(--white);
 }
 
 #current img {
     display: block;
-    width: 96px;
-    height: 96px;
     margin: 0 auto 8px;
 }
 
-#current p {
-    margin: 0;
-    font-size: 1.5rem;
-    font-weight: 600;
+#current .temp {
+    font-size: var(--fs-temp-lg);
+}
+
+#current .desc {
+    margin-top: 4px;
+    font-size: var(--fs-base);
+    color: #dbe7f5;
 }
 
 aside {
-    padding: 16px 20px;
-    background-color: var(--sky-lighter);
-    border-left: 4px solid var(--sky-mid);
+    padding: 20px 24px;
+    background-color: var(--accent-soft);
+    border-left: 4px solid var(--accent);
+    border-radius: 0 12px 12px 0;
 }
 
 aside h2 {
     margin-top: 0;
-    font-size: 1.25rem;
+    font-size: var(--fs-h3);
 }
 
 aside p {
     margin: 0;
 }
+
+.legend {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px 20px;
+    margin: 0 0 16px;
+    padding: 0;
+    list-style: none;
+    font-size: var(--fs-sm);
+    color: var(--text-muted);
+}
+
+.legend__item::before {
+    content: "";
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    margin-right: 6px;
+    border-radius: 50%;
+    background-color: var(--text-muted);
+}
+
+.legend__item--cold::before { background-color: var(--cold); }
+.legend__item--cool::before { background-color: var(--cool); }
+.legend__item--warm::before { background-color: var(--warm); }
+.legend__item--hot::before  { background-color: var(--hot); }
+
+/* ===== температура: спільні стилі та обґрунтування ===== */
+.temp {
+    margin: 0;
+    font-size: var(--fs-temp);
+    font-weight: 700;
+    line-height: 1.1;
+}
+
+.desc {
+    margin: 0;
+}
+
+/*
+ * НЕЧІТКА ВИМОГА: «щоб користувач одразу відчував, тепло чи холодно надворі».
+ * Інтерпретація: температуру розбито на 4 діапазони, кожному відповідає колір за
+ * кольоровою асоціацією: холодно — синій, прохолодно — бірюзовий, тепло — бурштиновий/
+ * помаранчевий, спекотно — червоний. Колір сприймається швидше за число, тому
+ * користувач відчуває «температуру» ще до читання. Колір не єдиний носій інформації:
+ * число й легенда зберігають зміст без кольору (WCAG). На темній картці поточної
+ * погоди ті самі відтінки світліші, щоб контраст лишався ≥ 4.5:1.
+ */
+.temp--cold { color: var(--cold); }
+.temp--cool { color: var(--cool); }
+.temp--warm { color: var(--warm); }
+.temp--hot  { color: var(--hot); }
 
 .cards {
     display: grid;
@@ -158,35 +258,32 @@ aside p {
 }
 
 .card {
-    background-color: var(--white);
+    min-width: 0;
     padding: 16px;
     border-radius: 12px;
-    box-shadow: 0 2px 8px rgba(11, 61, 145, 0.15);
+    background-color: var(--surface);
+    box-shadow: 0 2px 8px rgba(18, 60, 105, 0.12);
 }
 
 .card h3 {
     margin: 0 0 4px;
-    font-size: 1.1rem;
-    color: var(--sky-deep);
-}
-
-.card .temp {
-    margin: 0;
-    font-size: 2rem;
-    font-weight: 700;
-    color: var(--sky-mid);
+    font-size: var(--fs-h3);
+    color: var(--blue-900);
+    overflow-wrap: anywhere;
 }
 
 .card .desc {
-    margin: 0;
+    margin-top: 4px;
+    font-size: var(--fs-sm);
+    color: var(--text-muted);
 }
 
 footer {
     padding: 16px 24px;
-    border-top: 1px solid var(--sky-light);
+    border-top: 1px solid var(--border);
     text-align: center;
-    font-size: 0.875rem;
-    color: #4a5d78;
+    font-size: var(--fs-sm);
+    color: var(--text-muted);
 }
 
 @media (min-width: 600px) {
