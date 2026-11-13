@@ -39,6 +39,12 @@
         </div>
         <section id="forecast">
             <h2>Прогноз</h2>
+            <ul class="legend">
+                <li class="legend__item legend__item--cold">до +5&deg;C — холодно</li>
+                <li class="legend__item legend__item--cool">+6…+15&deg;C — прохолодно</li>
+                <li class="legend__item legend__item--warm">+16…+24&deg;C — тепло</li>
+                <li class="legend__item legend__item--hot">від +25&deg;C — спекотно</li>
+            </ul>
             <div class="cards">
                 <article class="card">
                     <h3>Вівторок</h3>
@@ -76,10 +82,11 @@
                     <p class="desc">хмарно</p>
                 </article>
             </div>
+            <p id="avg-temp" class="summary">Середня температура за період: —</p>
         </section>
     </main>
     <footer>
         <p>Дані надані навчальним прикладом. &copy; 2026 Пічугін Олексій</p>
     </footer>
 </body>
-</html> 
+</html>

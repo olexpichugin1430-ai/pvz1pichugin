@@ -278,6 +278,16 @@ aside p {
     color: var(--text-muted);
 }
 
+.card.cold {
+    border-top: 4px solid var(--cold);
+}
+
+.summary {
+    margin: 16px 0 0;
+    font-weight: 600;
+    color: var(--blue-900);
+}
+
 footer {
     padding: 16px 24px;
     border-top: 1px solid var(--border);
