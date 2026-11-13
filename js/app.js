@@ -107,3 +107,55 @@ function renderForecast(days) {
 }
 
 renderForecast(forecast);
+
+const form = document.querySelector('#day-form');
+const dayInput = document.querySelector('#day-input');
+const tempInput = document.querySelector('#temp-input');
+const descriptionInput = document.querySelector('#description-input');
+const hottestBtn = document.querySelector('#hottest-btn');
+const hottestResult = document.querySelector('#hottest-result');
+
+form.addEventListener('submit', event => {
+    event.preventDefault();
+
+    const day = dayInput.value.trim();
+    const temp = Number(tempInput.value);
+    const description = descriptionInput.value.trim();
+
+    if (day === '') {
+        dayInput.value = '';
+        dayInput.reportValidity();
+        return;
+    }
+
+    forecast.push({ day, temp, description: description || 'без опису' });
+    renderForecast(forecast);
+    hottestResult.textContent = '—';
+    form.reset();
+    dayInput.focus();
+});
+
+tempInput.addEventListener('input', () => {
+    const value = Number(tempInput.value);
+    if (tempInput.value !== '' && (value < -50 || value > 50)) {
+        tempInput.setCustomValidity('Температура поза реалістичним діапазоном');
+    } else {
+        tempInput.setCustomValidity('');
+    }
+});
+
+function findHottest(days) {
+    let hottest = days[0];
+    for (const item of days) {
+        if (item.temp > hottest.temp) {
+            hottest = item;
+        }
+    }
+    return hottest;
+}
+
+hottestBtn.addEventListener('click', () => {
+    const hottest = findHottest(forecast);
+    hottestResult.textContent =
+        `Найтепліший день: ${hottest.day} (${formatTemp(hottest.temp)})`;
+});

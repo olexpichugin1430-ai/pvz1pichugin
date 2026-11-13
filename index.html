@@ -39,50 +39,49 @@
         </div>
         <section id="forecast">
             <h2>Прогноз</h2>
+
+            <form id="day-form" class="day-form">
+                <h3 class="day-form__title">Додати день прогнозу</h3>
+                <div class="day-form__fields">
+                    <div class="day-form__field">
+                        <label for="day-input">День тижня</label>
+                        <input type="text" id="day-input" name="day" required>
+                    </div>
+                    <div class="day-form__field">
+                        <label for="temp-input">Температура, °C</label>
+                        <input type="number" id="temp-input" name="temp" step="1" required>
+                    </div>
+                    <div class="day-form__field">
+                        <label for="description-input">Опис погоди</label>
+                        <input type="text" id="description-input" name="description">
+                    </div>
+                    <button type="submit" class="btn">Додати</button>
+                </div>
+            </form>
+
             <ul class="legend">
-                <li class="legend__item legend__item--cold">до +5&deg;C — холодно</li>
-                <li class="legend__item legend__item--cool">+6…+15&deg;C — прохолодно</li>
-                <li class="legend__item legend__item--warm">+16…+24&deg;C — тепло</li>
-                <li class="legend__item legend__item--hot">від +25&deg;C — спекотно</li>
+                <li class="legend__item legend__item--cold">Холодно (до +5°C)</li>
+                <li class="legend__item legend__item--cool">Прохолодно (+6…+15°C)</li>
+                <li class="legend__item legend__item--warm">Тепло (+16…+24°C)</li>
+                <li class="legend__item legend__item--hot">Спекотно (від +25°C)</li>
             </ul>
+
             <div class="cards">
-                <article class="card">
-                    <h3>Вівторок</h3>
-                    <p class="temp temp--warm">+18&deg;C</p>
-                    <p class="desc">хмарно</p>
-                </article>
-                <article class="card">
-                    <h3>Середа</h3>
-                    <p class="temp temp--warm">+16&deg;C</p>
-                    <p class="desc">дощ</p>
-                </article>
-                <article class="card">
-                    <h3>Четвер</h3>
-                    <p class="temp temp--warm">+17&deg;C</p>
-                    <p class="desc">мінлива хмарність</p>
-                </article>
-                <article class="card">
-                    <h3>П’ятниця</h3>
-                    <p class="temp temp--warm">+19&deg;C</p>
-                    <p class="desc">сонячно</p>
-                </article>
-                <article class="card">
-                    <h3>Субота</h3>
-                    <p class="temp temp--cool">+15&deg;C</p>
-                    <p class="desc">дощ</p>
-                </article>
-                <article class="card">
-                    <h3>Неділя</h3>
-                    <p class="temp temp--warm">+20&deg;C</p>
-                    <p class="desc">ясно</p>
-                </article>
-                <article class="card">
-                    <h3>Понеділок</h3>
-                    <p class="temp temp--warm">+17&deg;C</p>
-                    <p class="desc">хмарно</p>
-                </article>
+                <article class="card"><h3>Вівторок</h3><p class="temp temp--warm">+18°C</p><p class="desc">хмарно</p></article>
+                <article class="card"><h3>Середа</h3><p class="temp temp--warm">+16°C</p><p class="desc">дощ</p></article>
+                <article class="card"><h3>Четвер</h3><p class="temp temp--warm">+17°C</p><p class="desc">мінлива хмарність</p></article>
+                <article class="card"><h3>П’ятниця</h3><p class="temp temp--warm">+19°C</p><p class="desc">сонячно</p></article>
+                <article class="card"><h3>Субота</h3><p class="temp temp--cool">+15°C</p><p class="desc">дощ</p></article>
+                <article class="card"><h3>Неділя</h3><p class="temp temp--warm">+20°C</p><p class="desc">ясно</p></article>
+                <article class="card"><h3>Понеділок</h3><p class="temp temp--warm">+17°C</p><p class="desc">хмарно</p></article>
             </div>
+
             <p id="avg-temp" class="summary">Середня температура за період: —</p>
+
+            <div class="forecast-actions">
+                <button type="button" id="hottest-btn" class="btn">Найтепліший день</button>
+                <p id="hottest-result" class="summary" aria-live="polite">—</p>
+            </div>
         </section>
     </main>
     <footer>
